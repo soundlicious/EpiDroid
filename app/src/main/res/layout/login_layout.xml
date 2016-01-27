@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/Logo_Login"
+        android:layout_width="wrap_content"
+        android:layout_height="200dip"
+        android:src="@drawable/epitechlogo"
+        android:layout_alignParentTop="true"
+        android:paddingTop="50dip"/>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:id="@+id/FloatLabel_Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Logo_Login"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:id="@+id/EditText_Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Login" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:id="@+id/FloatLabel_Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        float:fletPadding="10dp"
+        android:layout_below="@+id/FloatLabel_Login"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:id="@+id/EditText_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unix Password"
+            android:inputType="textPassword"/>
+
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <Button
+        android:id="@+id/Button_Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_button"
+        android:layout_below="@+id/FloatLabel_Password"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
