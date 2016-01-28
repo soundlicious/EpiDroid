@@ -4,5 +4,10 @@
     <string name="login_button">Connection</string>
     <string name="InternetPermission">Internet Permission</string>
     <string name="url">http://epitech-api.herokuapp.com/</string>
-    <string name="login">login</string>
+    <string name="pictureUrl">https://cdn.local.epitech.eu/userprofil/profilview/</string>
+    <string name="login">http://epitech-api.herokuapp.com/login</string>
+    <string name="infos">http://epitech-api.herokuapp.com/infos</string>
+    <string name="EmptyLoginPassFields">Login and Password are Required</string>
+    <string name="BadInfoLogin">Login or Password incorrect</string>
+    <string name="title_activity_home">Home</string>
 </resources>

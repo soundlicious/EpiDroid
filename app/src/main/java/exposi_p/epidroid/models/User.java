@@ -6,35 +6,52 @@ import com.google.gson.annotations.SerializedName;
  * @author sound
  */
 public class User {
-    @SerializedName("login")
-    private String login;
-    @SerializedName("password")
-    private String password;
+    @SerializedName("picture")
+    private String picture;
+    @SerializedName("title")
+    private String title;
+    @SerializedName("url")
+    private String url;
 
     /**
-     *
-     * @param pass
-     * @param log
-     * @author sound
+     * @return The picture
      */
-    public User(String pass, String log){
-        login = log;
-        password = pass;
+    public String getPicture() {
+        return picture;
     }
 
     /**
-     * @return A string containing the password
-     * @author sound
+     * @param picture The picture
      */
-    public String getPassword(){
-        return password;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     /**
-     * @return A string containing the login
-     * @author sound
+     * @return The title
      */
-    public String getLogin(){
-        return login;
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title The title
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * @return The url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * @param url The url
+     */
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

@@ -1,6 +1,7 @@
 package exposi_p.epidroid;
 
 import android.app.DownloadManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,13 +18,9 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.android.volley.error.VolleyError;
+import com.android.volley.request.StringRequest;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.json.JSONException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,56 +31,39 @@ import exposi_p.epidroid.models.User;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RequestHandler requestHandler;
     private Token token;
+    private User user;
+    private EditText login;
+    private EditText password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-        /*
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
-
         Button button = (Button) findViewById(R.id.Button_Login);
-        final EditText login = (EditText) findViewById(R.id.EditText_Login);
-        final EditText password = (EditText) findViewById(R.id.EditText_Password);
-        //requestHandler = new RequestHandler(this);
-        String url = "http://epitech-api.herokuapp.com/";
+        login = (EditText) findViewById(R.id.EditText_Login);
+        password = (EditText) findViewById(R.id.EditText_Password);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user = new User(password.getText().toString(), login.getText().toString());
-//                try {
-//                    Volley.newRequestQueue(getApplicationContext()).add(requestHandler.loginRequest(user));;
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-                RequestQueue queue = MyVolley.getRequestQueue();
-                StringRequest request = new StringRequest(Request.Method.POST, "http://epitech-api.herokuapp.com/login",
-                        createMyReqSuccessListener(),
-                        createMyReqErrorListener()
-                ) {
-                    @Override
-                    protected Map<String, String> getParams() {
-                        Map<String, String>  params = new HashMap<>();
-                        params.put("login", "exposip");
-                        params.put("password", "?rzXaea8");
-                        return params;
-                    }
-                };
-
-                queue.add(request);
-
+                if (password.getText() == null || login.getText() == null)
+                    Toast.makeText(getApplicationContext(), getString(R.string.EmptyLoginPassFields), Toast.LENGTH_LONG).show();
+                else {
+                    RequestQueue queue = MyVolley.getRequestQueue();
+                    StringRequest request = new StringRequest(Request.Method.POST, getString(R.string.login),
+                            createMyReqSuccessListener(),
+                            createMyReqErrorListener()
+                    ) {
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<>();
+                            params.put("login", login.getText().toString());
+                            params.put("password", password.getText().toString());
+                            return params;
+                        }
+                    };
+                    queue.add(request);
+                }
             }
         });
     }
@@ -94,14 +74,13 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 Gson gson = new Gson();
                 token = gson.fromJson(response, Token.class);
-                if (token != null)
-                    Toast.makeText(getApplicationContext(), token.getToken(), Toast.LENGTH_LONG).show();
-                System.out.println(response);
+                if (token != null){
+                    Intent home = new Intent(getApplicationContext(), Home.class);
+                    home.putExtra("token", token.getToken());
+                    startActivity(home);
+                }
             }
         };
-    }
-
-    private void displayToast(Token token) {
     }
 
 
@@ -109,11 +88,28 @@ public class MainActivity extends AppCompatActivity {
         return new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "gadded", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.BadInfoLogin), Toast.LENGTH_LONG).show();
             }
         };
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle bundle) {
+        if (login.getText() != null)
+            bundle.putString("login", login.getText().toString());
+        if (password.getText() != null)
+            bundle.putString("password", password.getText().toString());
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState)
+    {
+        //Restore login and password if savedInstanceState not null
+        if (savedInstanceState != null) {
+            login.setText(savedInstanceState.getString("login"));
+            password.setText(savedInstanceState.getString("password"));
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -135,9 +131,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void login(){
-
     }
 }
