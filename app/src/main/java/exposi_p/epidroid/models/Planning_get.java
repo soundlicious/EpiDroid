@@ -74,7 +74,7 @@ public class Planning_get {
     private String isRdv;
     @SerializedName("instance_location")
     private String instanceLocation;
-    @SerializedName(title)
+    @SerializedName("title")
     private String title;
     @SerializedName("event_registered")
     private Boolean eventRegistered;
