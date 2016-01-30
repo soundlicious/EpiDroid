@@ -10,14 +10,10 @@ public class Prof_inst {
     private String user;
     @SerializedName("login")
     private String login;
-    @SerializedName("title")
-    private String title;
     @SerializedName("picture")
-    private String title;
+    private String picture;
     @SerializedName("type")
     private String type;
-    @SerializedName("login")
-    private String login;
     @SerializedName("title")
     private String title;
 
