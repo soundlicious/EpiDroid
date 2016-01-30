@@ -6,8 +6,6 @@ import com.google.gson.annotations.SerializedName;
  * Created by sound on 28/01/16.
  */
 public class Current {
-    @SerializedName("active_log")
-    private String activeLog;
     @SerializedName("credits_min")
     private String creditsMin;
     @SerializedName("credits_norm")
@@ -18,17 +16,22 @@ public class Current {
     private String nslogMin;
     @SerializedName("nslog_norm")
     private String nslogNorm;
+    @SerializedName("credits")
+    private String credits;
+    @SerializedName("grade")
+    private String grade;
+    @SerializedName("cycle")
+    private String cycle;
+    @SerializedName("code_module")
+    private String codeModule;
+    @SerializedName("current_cycle")
+    private String currentCycle;
     @SerializedName("semester_code")
     private String semesterCode;
     @SerializedName("semester_num")
     private String semesterNum;
-    @SerializedName("achieved")
-    private Integer achieved;
-    @SerializedName("failed")
-    private Integer failed;
-    @SerializedName("inprogress")
-    private Integer inprogress;
-
+    @SerializedName("active_log")
+    private String activeLog;
     /**
      * @return The activeLog
      */
@@ -142,44 +145,92 @@ public class Current {
     }
 
     /**
-     * @return The achieved
+     *
+     * @return The credits
      */
-    public Integer getAchieved() {
-        return achieved;
+
+    public String getCredits() {
+        return credits;
     }
 
     /**
-     * @param achieved The achieved
+     *
+     * @param credits The credits
      */
-    public void setAchieved(Integer achieved) {
-        this.achieved = achieved;
+
+    public void setCredits(String credits) {
+        this.credits = credits;
     }
 
     /**
-     * @return The failed
+     *
+     * @return The grade
      */
-    public Integer getFailed() {
-        return failed;
+
+    public String getGrade() {
+        return grade;
     }
 
     /**
-     * @param failed The failed
+     *
+     * @param grade The grade
      */
-    public void setFailed(Integer failed) {
-        this.failed = failed;
-    }
 
-    /**column
-     * @return The inprogress
-     */
-    public Integer getInprogress() {
-        return inprogress;
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 
     /**
-     * @param inprogress The inprogress
+     *
+     * @return The cycle
      */
-    public void setInprogress(Integer inprogress) {
-        this.inprogress = inprogress;
+
+    public String getCycle() {
+        return cycle;
+    }
+
+    /**
+     *
+     * @param cycle The cycle
+     */
+
+    public void setCycle(String cycle) {
+        this.cycle = cycle;
+    }
+
+    /**
+     *
+     * @return The code_module
+     */
+
+    public String getCodeModule() {
+        return codeModule;
+    }
+
+    /**
+     *
+     * @param codeModule The code_module
+     */
+
+    public void setCodeModule(String codeModule) {
+        this.codeModule = codeModule;
+    }
+
+    /**
+     *
+     * @return The current_cycle
+     */
+
+    public String getCurrentCycle() {
+        return currentCycle;
+    }
+
+    /**
+     *
+     * @param currentCycle The current_cycle
+     */
+
+    public void setCurrentCycle(String currentCycle) {
+        this.currentCycle = currentCycle;
     }
 }
