@@ -9,10 +9,16 @@ public class Login {
     @SerializedName("login")
     private String login;
 
+    /**
+     * @return The login
+     */
     public String getLogin() {
         return login;
     }
 
+    /**
+     * @param ip The login
+     */
     public void setLogin(String login) {
         this.login = login;
     }
