@@ -2,413 +2,230 @@ package exposi_p.epidroid.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 /**
- * Created by sound on 28/01/16.
+ * Created by Emilie on 30/01/2016.
  */
 public class Projet {
-    @SerializedName("acti_title")
-    private String actiTitle;
-    @SerializedName("begin_acti")
-    private String beginActi;
-    @SerializedName("begin_event")
-    private String beginEvent;
-    @SerializedName("code_location")
-    private String codeLocation;
-    @SerializedName("codeacti")
-    private String codeacti;
-    @SerializedName("codeinstance")
-    private String codeinstance;
-    @SerializedName("codemodule")
-    private String codemodule;
-    @SerializedName("end_acti")
-    private Date endActi;
-    @SerializedName("end_event")
-    private String endEvent;
-    @SerializedName("info_creneau")
-    private Object infoCreneau;
-    @SerializedName("num")
-    private String num;
-    @SerializedName("num_event")
-    private String numEvent;
-    @SerializedName("projet")
-    private Object project;
-    @SerializedName("registered")
-    private Integer registered;
-    @SerializedName("rights")
-    private List<String> rights = new ArrayList<String>();
-    @SerializedName("scolaryear")
-    private String scolaryear;
-    @SerializedName("seats")
-    private Object seats;
-    @SerializedName("title_module")
-    private String titleModule;
-    @SerializedName("type_acti")
-    private String typeActi;
-    @SerializedName("type_acti_code")
-    private String typeActiCode;
+    @SerializedName("title")
+    private String title;
+    @SerializedName("title_link")
+    private String titleLink;
+    @SerializedName("timeline_start")
+    private String timelineStart;
+    @SerializedName("timeline_end")
+    private String timelineEnd;
+    @SerializedName("timeline_barre")
+    private String timelineBarre;
+    @SerializedName("date_inscription")
+    private String dateInscription;
+    @SerializedName("id_activite")
+    private String idActivite;
+    @SerializedName("soutenance_name")
+    private Boolean soutenanceName;
+    @SerializedName("soutenance_link")
+    private Boolean soutenanceLink;
+    @SerializedName("soutenance_date")
+    private Boolean soutenanceDate;
+    @SerializedName("soutenance_salle")
+    private Boolean soutenanceSalle;
 
     /**
      *
      * @return
-     *     The actiTitle
+     *     The title
      */
-    public String getActiTitle() {
-        return actiTitle;
+
+    public String getTitle() {
+        return title;
     }
 
     /**
      *
-     * @param actiTitle
-     *     The acti_title
+     * @param title
+     *     The title
      */
-    public void setActiTitle(String actiTitle) {
-        this.actiTitle = actiTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     /**
      *
      * @return
-     *     The beginActi
+     *     The titleLink
      */
-    public String getBeginActi() {
-        return beginActi;
+    public String getTitleLink() {
+        return titleLink;
     }
 
     /**
      *
-     * @param beginActi
-     *     The begin_acti
+     * @param titleLink
+     *     The titleLink
      */
-    public void setBeginActi(String beginActi) {
-        this.beginActi = beginActi;
-    }
-
-    /**
-     *
-     * @return
-     *     The beginEvent
-     */
-    public String getBeginEvent() {
-        return beginEvent;
-    }
-
-    /**
-     *
-     * @param beginEvent
-     *     The begin_event
-     */
-    public void setBeginEvent(String beginEvent) {
-        this.beginEvent = beginEvent;
+    public void setTitleLink(String titleLink) {
+        this.titleLink = titleLink;
     }
 
     /**
      *
      * @return
-     *     The codeLocation
+     *     The timelineStart
      */
-    public String getCodeLocation() {
-        return codeLocation;
+    public String getTimelineStart() {
+        return timelineStart;
     }
 
     /**
      *
-     * @param codeLocation
-     *     The code_location
+     * @param timelineStart
+     *     The timelineStart
      */
-    public void setCodeLocation(String codeLocation) {
-        this.codeLocation = codeLocation;
-    }
-
-    /**
-     *
-     * @return
-     *     The codeacti
-     */
-    public String getCodeacti() {
-        return codeacti;
-    }
-
-    /**
-     *
-     * @param codeacti
-     *     The codeacti
-     */
-    public void setCodeacti(String codeacti) {
-        this.codeacti = codeacti;
+    public void setTimelineStart(String timelineStart) {
+        this.timelineStart = timelineStart;
     }
 
     /**
      *
      * @return
-     *     The codeinstance
+     *     The timelineEnd
      */
-    public String getCodeinstance() {
-        return codeinstance;
+    public String getTimelineEnd() {
+        return timelineEnd;
     }
 
     /**
      *
-     * @param codeinstance
-     *     The codeinstance
+     * @param timelineEnd
+     *     The timelineEnd
      */
-    public void setCodeinstance(String codeinstance) {
-        this.codeinstance = codeinstance;
-    }
-
-    /**
-     *
-     * @return
-     *     The codemodule
-     */
-    public String getCodemodule() {
-        return codemodule;
-    }
-
-    /**
-     *
-     * @param codemodule
-     *     The codemodule
-     */
-    public void setCodemodule(String codemodule) {
-        this.codemodule = codemodule;
+    public void setTimelineEnd(String timelineEnd) {
+        this.timelineEnd = timelineEnd;
     }
 
     /**
      *
      * @return
-     *     The endActi
+     *     The timelineBarre
      */
-    public Date getEndActi() {
-        return endActi;
+    public String getTimelineBarre() {
+        return timelineBarre;
     }
 
     /**
      *
-     * @param endActi
-     *     The end_acti
+     * @param timelineBarre
+     *     The timelineBarre
      */
-    public void setEndActi(Date endActi) {
-        this.endActi = endActi;
-    }
-
-    /**
-     *
-     * @return
-     *     The endEvent
-     */
-    public String getEndEvent() {
-        return endEvent;
-    }
-
-    /**
-     *
-     * @param endEvent
-     *     The end_event
-     */
-    public void setEndEvent(String endEvent) {
-        this.endEvent = endEvent;
+    public void setTimelineBarre(String timelineBarre) {
+        this.timelineBarre = timelineBarre;
     }
 
     /**
      *
      * @return
-     *     The infoCreneau
+     *     The dateInscription
      */
-    public Object getInfoCreneau() {
-        return infoCreneau;
+    public String getDateInscription() {
+        return dateInscription;
     }
 
     /**
      *
-     * @param infoCreneau
-     *     The info_creneau
+     * @param dateInscription
+     *     The dateInscription
      */
-    public void setInfoCreneau(Object infoCreneau) {
-        this.infoCreneau = infoCreneau;
-    }
-
-    /**
-     *
-     * @return
-     *     The num
-     */
-    public String getNum() {
-        return num;
-    }
-
-    /**
-     *
-     * @param num
-     *     The num
-     */
-    public void setNum(String num) {
-        this.num = num;
+    public void setDateInscription(String dateInscription) {
+        this.dateInscription = dateInscription;
     }
 
     /**
      *
      * @return
-     *     The numEvent
+     *     The idActivite
      */
-    public String getNumEvent() {
-        return numEvent;
+    public String getIdActivite() {
+        return idActivite;
     }
 
     /**
      *
-     * @param numEvent
-     *     The num_event
+     * @param idActivite
+     *     The idActivite
      */
-    public void setNumEvent(String numEvent) {
-        this.numEvent = numEvent;
-    }
-
-    /**
-     *
-     * @return
-     *     The project
-     */
-    public Object getProject() {
-        return project;
-    }
-
-    /**
-     *
-     * @param project
-     *     The project
-     */
-    public void setProject(Object project) {
-        this.project = project;
+    public void setIdActivite(String idActivite) {
+        this.idActivite = idActivite;
     }
 
     /**
      *
      * @return
-     *     The registered
+     *     The soutenanceName
      */
-    public Integer getRegistered() {
-        return registered;
+    public Boolean getSoutenanceName() {
+        return soutenanceName;
     }
 
     /**
      *
-     * @param registered
-     *     The registered
+     * @param soutenanceName
+     *     The soutenanceName
      */
-    public void setRegistered(Integer registered) {
-        this.registered = registered;
-    }
-
-    /**
-     *
-     * @return
-     *     The rights
-     */
-    public List<String> getRights() {
-        return rights;
-    }
-
-    /**
-     *
-     * @param rights
-     *     The rights
-     */
-    public void setRights(List<String> rights) {
-        this.rights = rights;
+    public void setSoutenanceName(Boolean soutenanceName) {
+        this.soutenanceName = soutenanceName;
     }
 
     /**
      *
      * @return
-     *     The scolaryear
+     *     The soutenanceLink
      */
-    public String getScolaryear() {
-        return scolaryear;
+    public Boolean getSoutenanceLink() {
+        return soutenanceLink;
     }
 
     /**
      *
-     * @param scolaryear
-     *     The scolaryear
+     * @param soutenanceLink
+     *     The soutenanceLink
      */
-    public void setScolaryear(String scolaryear) {
-        this.scolaryear = scolaryear;
-    }
-
-    /**
-     *
-     * @return
-     *     The seats
-     */
-    public Object getSeats() {
-        return seats;
-    }
-
-    /**
-     *
-     * @param seats
-     *     The seats
-     */
-    public void setSeats(Object seats) {
-        this.seats = seats;
+    public void setSoutenanceLink(Boolean soutenanceLink) {
+        this.soutenanceLink = soutenanceLink;
     }
 
     /**
      *
      * @return
-     *     The titleModule
+     *     The soutenanceDate
      */
-    public String getTitleModule() {
-        return titleModule;
+    public Boolean getSoutenanceDate() {
+        return soutenanceDate;
     }
 
     /**
      *
-     * @param titleModule
-     *     The title_module
+     * @param soutenanceDate
+     *     The soutenanceDate
      */
-    public void setTitleModule(String titleModule) {
-        this.titleModule = titleModule;
-    }
-
-    /**
-     *
-     * @return
-     *     The typeActi
-     */
-    public String getTypeActi() {
-        return typeActi;
-    }
-
-    /**
-     *
-     * @param typeActi
-     *     The type_acti
-     */
-    public void setTypeActi(String typeActi) {
-        this.typeActi = typeActi;
+    public void setSoutenanceDate(Boolean soutenanceDate) {
+        this.soutenanceDate = soutenanceDate;
     }
 
     /**
      *
      * @return
-     *     The typeActiCode
+     *     The soutenanceSalle
      */
-    public String getTypeActiCode() {
-        return typeActiCode;
+    public Boolean getSoutenanceSalle() {
+        return soutenanceSalle;
     }
 
     /**
      *
-     * @param typeActiCode
-     *     The type_acti_code
+     * @param soutenanceSalle
+     *     The soutenanceSalle
      */
-    public void setTypeActiCode(String typeActiCode) {
-        this.typeActiCode = typeActiCode;
+    public void setSoutenanceSalle(Boolean soutenanceSalle) {
+        this.soutenanceSalle = soutenanceSalle;
     }
-
 }
+
