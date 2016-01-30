@@ -32,6 +32,8 @@ public class Infos {
     private Object emailReferent;
     @SerializedName("pass_referent")
     private String passReferent;
+    @SerializedName("scolaryear")
+    private String scolarYear;
     @SerializedName("promo")
     private Integer promo;
     @SerializedName("semester")
@@ -66,6 +68,8 @@ public class Infos {
     private String idHistory;
     @SerializedName("course_code")
     private String courseCode;
+    @SerializedName("school_id")
+    private String schoolId;
     @SerializedName("school_code")
     private String schoolCode;
     @SerializedName("school_title")
@@ -629,5 +633,37 @@ public class Infos {
      */
     public void setDecoded(Integer decoded) {
         this.decoded = decoded;
+    }
+
+    /**
+     *
+     * @return The scolarYear
+     */
+
+    public String getScolarYear() {return scolarYear;}
+
+    /**
+     *
+     * @return The SchoolId
+     */
+
+    public String getSchoolId() {return schoolId;}
+
+    /**
+     *
+     * @param scolarYear The scolarYear
+     */
+
+    public void setScolarYear(String scolarYear) {
+        this.scolarYear = scolarYear;
+    }
+
+    /**
+     *
+     * @param schoolId The SchoolId
+     */
+
+    public void setSchoolId(String schoolId) {
+        this.schoolId = schoolId;
     }
 }
