@@ -84,6 +84,8 @@ public class Project_get {
     private String user_project_title;
     @SerializedName("registered_instance")
     private String registered_instance;
+    @SerializedName("registered")
+    private Registered registered;
 
     public String getScolaryear() {
         return scolaryear;
@@ -396,4 +398,13 @@ public class Project_get {
     public void setRegistered_instance(String registered_instance) {
         this.registered_instance = registered_instance;
     }
+
+    public Registered getRegistered() {
+        return registered;
+    }
+
+    public void setRegistered(Registered registered) {
+        this.registered = registered;
+    }
+
 }
