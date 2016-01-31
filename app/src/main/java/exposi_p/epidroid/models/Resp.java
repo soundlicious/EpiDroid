@@ -3,26 +3,24 @@ package exposi_p.epidroid.models;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by Emilie on 30/01/2016.
+ * Created by Emilie on 31/01/2016.
  */
-public class Prof_inst {
-    @SerializedName("type")
-    private String user;
-    @SerializedName("login")
-    private String login;
-    @SerializedName("picture")
-    private String picture;
+public class Resp {
     @SerializedName("type")
     private String type;
+    @SerializedName("login")
+    private String login;
     @SerializedName("title")
     private String title;
+    @SerializedName("picture")
+    private String picture;
 
-    public String getUser() {
-        return user;
+    public String getType() {
+        return type;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getLogin() {
@@ -41,11 +39,11 @@ public class Prof_inst {
         this.title = title;
     }
 
-    public String getType() {
-        return type;
+    public String getPicture() {
+        return picture;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
